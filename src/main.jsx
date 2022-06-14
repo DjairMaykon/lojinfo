@@ -1,10 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './index.css'
+import { Cart } from './pages/Cart'
+import { Home } from './pages/Home'
+import { NotFound } from './pages/NotFound'
+import { Product } from './pages/Product'
+import { Products } from './pages/Products'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/products" element={<Products />} />
+        <Route exact path="/product/:id" element={<Product />} />
+        <Route exact path="/product/" element={<Product />} />
+        <Route exact path="/cart/" element={<Cart />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 )
