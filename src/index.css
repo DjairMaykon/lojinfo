@@ -4,4 +4,11 @@
   border: 0;
   box-sizing: border-box;
   text-decoration: none;
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+p,
+textarea {
+  font-family: 'Montserrat', sans-serif;
 }
