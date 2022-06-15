@@ -43,11 +43,12 @@ footer {
   .logoMenuSocialContainer {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 100%;
     gap: 15%;
     padding: 0 4%;
     padding-bottom: 6%;
-    padding-top: 3%;
+    padding-top: 1.5%;
   }
 
   .navMenuFooter {
