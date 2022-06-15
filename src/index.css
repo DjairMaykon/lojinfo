@@ -5,6 +5,8 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  font-family: 'Montserrat', sans-serif;
   font-family: 'Poppins', sans-serif;
 }
+ p, textarea{
+  font-family: 'Montserrat', sans-serif;
+ }
