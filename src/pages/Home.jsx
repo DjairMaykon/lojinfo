@@ -1,3 +1,5 @@
+import { Footer } from '../components/footer'
+
 export function Home() {
-  return <div>Home</div>
+  return <Footer />
 }
