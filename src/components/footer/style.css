@@ -6,6 +6,7 @@ footer {
   height: 5.5%;
   width: 100%;
   gap: 30px;
+  padding-bottom: 30px;
 }
 
 .logoMenuSocialContainer {
@@ -36,25 +37,35 @@ footer {
   color: #252822;
   font-size: 12px;
   font-weight: 400;
-  padding-bottom: 30px;
 }
 
-@media (min-width: 834px) {
+@media (min-width: 1250px) {
+  footer {
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: 56px;
+  }
+
+  .footerMessage {
+    font-size: 14px;
+  }
+
+  .colorNavMenuFooter {
+    font-size: 16px;
+  }
+
   .logoMenuSocialContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    gap: 15%;
-    padding: 0 4%;
-    padding-bottom: 6%;
-    padding-top: 1.5%;
   }
 
   .navMenuFooter {
     display: flex;
     gap: 40px;
     order: 2;
+    padding: 0;
   }
 
   .logoLojinhaFooter {
