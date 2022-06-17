@@ -1,11 +1,14 @@
 import { Footer } from '../components/footer'
 import { Header } from '../components/header'
+import { HeroHome } from '../components/heroHome/HeroHome'
 
 export function Home() {
   return (
     <>
       <Header />
-      <main>Home</main>
+      <main>
+        <HeroHome />
+      </main>
       <Footer />
     </>
   )
