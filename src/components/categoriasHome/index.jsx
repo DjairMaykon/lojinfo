@@ -1,5 +1,5 @@
 import './style.css'
-import botaoComprarCategorias from '../../assets/botaoComprarCategorias.svg'
+import BotaoComprarCategorias from '../../assets/botaoComprarCategorias.svg'
 export function CategoriasHome(props) {
   return (
     <section className="cardContainer">
@@ -14,7 +14,7 @@ export function CategoriasHome(props) {
           <p className="textSeeMoreCategories">Ver mais</p>
           <img
             className="seeMoreCategories"
-            src={botaoComprarCategorias}
+            src={BotaoComprarCategorias}
             alt="Seta do botão."
           />
         </div>
