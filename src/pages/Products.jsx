@@ -6,7 +6,7 @@ export function Products() {
   return (
     <>
       <Header />
-      <Forms />
+      <Forms text={'Cadastrar produto'} />
       <Footer />
     </>
   )
