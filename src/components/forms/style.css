@@ -120,3 +120,35 @@ form {
   flex-direction: column;
   gap: 5px;
 }
+
+@media screen and (min-width: 834px) {
+  .brandColorFormsContainer {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+  }
+  .inputColorForms {
+    width: 35%;
+  }
+  .inputBrandForms {
+    width: 60%;
+  }
+  .buttonForms {
+    max-width: 400px;
+  }
+  .inputCategoriesForms,
+  .inputPriceForms {
+    width: 60%;
+  }
+  .innerConteinerImgForms {
+    width: 290px;
+  }
+  .imgForms {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+}

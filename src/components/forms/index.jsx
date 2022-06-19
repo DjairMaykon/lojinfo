@@ -46,22 +46,25 @@ export function Forms(props) {
           <h5 className="titleFormsH5">(max.300 caracteres)</h5>
         </div>
       </div>
-      <div className="inputBrandForms">
-        <h4 className="titleFormsH4">Marca</h4>
-        <input
-          className="inputTextForms"
-          type="text"
-          placeholder={props.brand}
-        />
+      <div className="brandColorFormsContainer">
+        <div className="inputBrandForms">
+          <h4 className="titleFormsH4">Marca</h4>
+          <input
+            className="inputTextForms"
+            type="text"
+            placeholder={props.brand}
+          />
+        </div>
+        <div className="inputColorForms">
+          <h4 className="titleFormsH4">Cor</h4>
+          <input
+            className="inputTextForms"
+            type="text"
+            placeholder={props.color}
+          />
+        </div>
       </div>
-      <div className="inputColorForms">
-        <h4 className="titleFormsH4">Cor</h4>
-        <input
-          className="inputTextForms"
-          type="text"
-          placeholder={props.color}
-        />
-      </div>
+
       <div className="inputCategoriesForms">
         <div className="innerDivCategories">
           <h4 className="titleFormsH4">Categoria</h4>
