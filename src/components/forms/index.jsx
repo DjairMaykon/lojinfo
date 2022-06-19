@@ -1,4 +1,5 @@
 import './style.css'
+import defaultImageProduct from '../../assets/defaultImageProduct.svg'
 export function Forms(props) {
   return (
     <form>
@@ -8,7 +9,13 @@ export function Forms(props) {
       </div>
       <div className="imgForms">
         <h3 className="titleFormsH3">Preview da imagem</h3>
-        <img src="" alt="" />
+        <div className="innerConteinerImgForms">
+          <img
+            className="defaultImageProduct"
+            src={defaultImageProduct}
+            alt="Modelo para adicionar a imagem do produto."
+          />
+        </div>
       </div>
       <div className="inputUrlForms">
         <h4 className="titleFormsH4">Url da imagem</h4>
@@ -35,7 +42,9 @@ export function Forms(props) {
             placeholder={props.description}
           />
         </div>
-        <h5 className="descriptionFormsWarningMessage">(max.300 caracteres)</h5>
+        <div className="descriptionFormsWarningMessage">
+          <h5 className="titleFormsH5">(max.300 caracteres)</h5>
+        </div>
       </div>
       <div className="inputBrandForms">
         <h4 className="titleFormsH4">Marca</h4>
@@ -56,11 +65,19 @@ export function Forms(props) {
       <div className="inputCategoriesForms">
         <div className="innerDivCategories">
           <h4 className="titleFormsH4">Categoria</h4>
-          <input className="inputSelectForms" type="select" />
+          <select name="" className="inputSelectForms">
+            <option value="">Vestuário</option>
+            <option value="">Calçados</option>
+            <option value="">Acessórios</option>
+          </select>
         </div>
         <div className="innerDivCategories">
           <h4 className="titleFormsH4">Subtegoria</h4>
-          <input className="inputSelectForms" type="select" />
+          <select name="" className="inputSelectForms">
+            <option value="">Camisas</option>
+            <option value="">Tênis</option>
+            <option value="">Bolsas</option>
+          </select>
         </div>
       </div>
       <div className="inputPriceForms">
