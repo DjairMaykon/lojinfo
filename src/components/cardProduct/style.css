@@ -1,0 +1,64 @@
+.cardProduct {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.cardProduct .img {
+  cursor: pointer;
+
+  background-size: cover;
+
+  width: 315px;
+  height: 311.99px;
+  padding: 3px 2px;
+
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+}
+.cardProduct .img span {
+  width: 30px;
+  height: 30px;
+  padding: 8px;
+
+  background: #fafafa;
+  border-radius: 2px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  color: #252822;
+}
+
+.cardProduct p.title,
+.cardProduct p.category,
+.cardProduct p.price {
+  width: fit-content;
+  cursor: pointer;
+}
+.cardProduct p.price {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 22px;
+  color: #53b38d;
+}
+.cardProduct p.title,
+.cardProduct p.category {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 16px;
+}
+.cardProduct p.title {
+  color: #252822;
+}
+.cardProduct p.category {
+  color: #a6a39f;
+}
+
+@media screen and (min-width: 1250px) {
+  .cardProduct .img {
+    width: 247px;
+    height: 244px;
+  }
+}

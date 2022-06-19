@@ -1,0 +1,33 @@
+#productSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  padding: 0 30px;
+}
+
+#productSection section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media screen and (min-width: 834px) {
+  #productSection {
+    padding: 0 60px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  #productSection {
+    align-items: flex-start;
+
+    padding: 0 120px;
+  }
+
+  #productSection section {
+    justify-content: flex-start;
+  }
+}
