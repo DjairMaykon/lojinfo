@@ -6,8 +6,31 @@ main#mainHome {
   gap: 60px;
 }
 
+.categotiasContainerHome {
+  display: flex;
+  flex-direction: column;
+  width: 84%;
+  height: 22%;
+  margin: auto;
+  gap: 30px;
+}
+
+@media screen and (min-width: 834px) {
+  .categotiasContainerHome {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 25px;
+  }
+}
+
 @media screen and (min-width: 1250px) {
   main#mainHome {
     gap: 120px;
+  }
+  .categotiasContainerHome {
+    display: flex;
+    gap: 90px;
   }
 }
