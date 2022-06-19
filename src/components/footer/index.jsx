@@ -16,7 +16,7 @@ export function Footer() {
             </Link>
           </li>
           <li>
-            <Link to="/product" className="colorNavMenuFooter">
+            <Link to="/products" className="colorNavMenuFooter">
               Produtos
             </Link>
           </li>
