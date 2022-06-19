@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { CardProduct } from '../cardProduct'
+import { Pagination } from '../pagination'
 
 import './style.css'
 
@@ -34,6 +35,7 @@ export function SectionProducts(props) {
           />
         ))}
       </section>
+      <Pagination pagesQuantity={20} onPageChange={page => console.log(page)} />
     </section>
   )
 }
