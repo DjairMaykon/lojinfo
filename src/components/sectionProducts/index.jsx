@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 import { CardProduct } from '../cardProduct'
 import { Pagination } from '../pagination'
+import { Modal } from '../modal'
 
 import './style.css'
 
 export function SectionProducts(props) {
   const { search } = props
   const [products, setProducts] = useState([])
-
+  const [modalIsOpen, setModalIsOpen] = useState([false])
   useEffect(() => {
     setProducts(
       [...Array(10)].map(id => ({
@@ -23,10 +24,12 @@ export function SectionProducts(props) {
 
   return (
     <section id="productSection">
+      <Modal modalIsOpen={modalIsOpen} />
       {search ? <h1>Resultados de “{search}”</h1> : <h1>Produtos</h1>}
       <section>
         {products.map(product => (
           <CardProduct
+            onClick={() => setModalIsOpen(true)}
             key={product.id}
             urlImg={product.urlImg}
             title={product.title}

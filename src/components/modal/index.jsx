@@ -1,8 +1,12 @@
 import './style.css'
+import ReactModal from 'react-modal'
+ReactModal.setAppElement('#root')
 
-export function Modal() {
+export function Modal(props) {
+  const { modalIsOpen } = props
   return (
-    <Modal>
+    <ReactModal>
+      isOpen={modalIsOpen}
       <img src="" alt="" />
       <p></p>
       <div>
@@ -41,6 +45,6 @@ export function Modal() {
         </div>
         <button></button>
       </div>
-    </Modal>
+    </ReactModal>
   )
 }
