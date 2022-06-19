@@ -12,3 +12,16 @@ p,
 textarea {
   font-family: 'Montserrat', sans-serif;
 }
+
+main {
+  min-height: 80vh;
+}
+
+#root main {
+  padding: 67px 0;
+}
+@media screen and (min-width: 1250px) {
+  #root main {
+    padding: 100px 0;
+  }
+}
