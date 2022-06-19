@@ -19,30 +19,9 @@ form {
   height: 110px;
 }
 
-.titlesForms {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-  padding: 65px 0;
-}
-
-.titleFormsH1 {
-  color: #275845;
-  font-weight: 700;
-  font-size: 32px;
-  text-align: center;
-}
-
-.titleFormsP {
-  color: #252822;
-  font-size: 16px;
-}
-
 .titleFormsH4 {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 14px;
   color: #275845;
 }
 .titleFormsH3 {
@@ -61,6 +40,10 @@ form {
   width: 100%;
   justify-content: flex-end;
 }
+.inputTextForms {
+  display: flex;
+  height: 135px;
+}
 
 .inputTextForms {
   width: 100%;
@@ -75,15 +58,15 @@ form {
 .inputSelectForms {
   border: 1px solid #9d9a95;
   border-radius: 4px;
-  width: 115px;
+  width: 145px;
   height: 40px;
   background-color: transparent;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url('./assets/selectArrow.svg');
+  background-image: url('../../assets/selectForms.svg');
   background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: 11px;
+  background-position-x: 90%;
+  background-position-y: 17px;
   padding: 11px 6px;
 }
 
@@ -120,6 +103,11 @@ form {
   flex-direction: column;
   gap: 5px;
 }
+.formsContainerLessImg {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
 
 @media screen and (min-width: 834px) {
   .brandColorFormsContainer {
@@ -148,7 +136,35 @@ form {
     align-items: center;
     justify-content: center;
   }
+  .titleFormsH4 {
+    font-size: 18px;
+  }
 }
 
 @media screen and (min-width: 1250px) {
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 145px;
+    align-items: flex-start;
+  }
+  .innerConteinerImgForms {
+    display: flex;
+    height: 290px;
+  }
+  .imgForms {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .formsContainerLessImg {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    width: 50%;
+  }
+  .titleFormsH5 {
+    font-size: 16px;
+  }
 }
