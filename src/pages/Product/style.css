@@ -1,0 +1,32 @@
+.titlesForms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 65px 0;
+}
+.titleFormsH1 {
+  color: #275845;
+  font-weight: 700;
+  font-size: 32px;
+  text-align: center;
+}
+
+.titleFormsP {
+  color: #252822;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 834px) {
+  .titleFormsP {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .titleFormsH1 {
+    font-size: 72px;
+    font-size: 40px;
+  }
+}
