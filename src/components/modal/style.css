@@ -10,7 +10,7 @@
 }
 .closeModalContainer {
   display: flex;
-  width: 100%;
+
   justify-content: flex-end;
 }
 .closeAndTitleContainerModal {
@@ -21,7 +21,6 @@
 .productTitleModalContainer {
   display: flex;
   justify-content: center;
-  width: 100%;
   padding-bottom: 30px;
 }
 .howManyProductsContainer {
@@ -29,13 +28,14 @@
   padding-top: 30px;
   gap: 20px;
   justify-content: center;
+  align-items: center;
+  padding-bottom: 60px;
 }
 .circleLessModal,
 .circlePlusModal {
   cursor: pointer;
   width: 30px;
   height: 30px;
-  padding-bottom: 60px;
 }
 .descriptionContainerModal,
 .sellerContainerModal,
@@ -44,6 +44,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 15px;
   padding-bottom: 60px;
   width: 100%;
@@ -95,4 +96,115 @@
   font-weight: 600;
   font-size: 16px;
   height: 50px;
+}
+.productTitleModal {
+  color: #252822;
+  font-weight: 500;
+  font-size: 20px;
+}
+.howManyProductstext {
+  color: #000000;
+  font-weight: 700;
+  font-size: 20px;
+}
+.titleModalH2 {
+  color: #000000;
+  font-weight: 600;
+  font-size: 24px;
+}
+.productPriceModal {
+  font-weight: 600;
+  font-size: 36px;
+  color: #275845;
+}
+.textPModal {
+  color: #000000;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 834px) {
+  .closeAndTitleContainerModal {
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: center;
+    justify-content: flex-start;
+  }
+  .closeModalImg {
+    width: 20px;
+    height: 20px;
+  }
+  .productTitleModalContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .innerContainerModal {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .buttonsModal {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .addCartButtonModalContainer {
+    width: 300px;
+  }
+  .delEditModal {
+    width: 320px;
+  }
+  .delModalText,
+  .editModalText {
+    font-size: 25px;
+  }
+  .delModal,
+  .editModal {
+    width: 40px;
+    height: 40px;
+  }
+  .addCartButtonModal {
+    font-size: 20px;
+  }
+  .howManyProductstext,
+  .productTitleModal {
+    font-size: 32px;
+  }
+  .howManyProductsContainer {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .addCartButtonModalContainer {
+    width: 470px;
+  }
+  .delEditModal {
+    width: 410px;
+  }
+  .closeModalImg {
+    width: 30px;
+    height: 30px;
+  }
+  .productTitleModal,
+  .titleModalH2 {
+    font-size: 36px;
+  }
+  .textPModal {
+    font-size: 24px;
+  }
+  .productPriceModal {
+    font-size: 48px;
+  }
+  .delModal,
+  .editModal {
+    width: 50px;
+    height: 50px;
+  }
+  .delModalText,
+  .editModalText {
+    font-size: 32px;
+  }
 }

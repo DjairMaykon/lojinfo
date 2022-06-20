@@ -41,7 +41,7 @@ export function Modal(props) {
             />
           </div>
           <div className="productTitleModalContainer">
-            <p className="productTitleModal">{productTitle}</p>
+            <p className="productTitleModal">titutlo{productTitle}</p>
           </div>
         </div>
         <div className="innerContainerModal">
@@ -67,27 +67,29 @@ export function Modal(props) {
               />
             </div>
           </div>
-
-          <div className="descriptionContainerModal">
-            <h2>Descrição</h2>
-            <p>{productDescription}</p>
+          <div className="productSpec">
+            <div className="descriptionContainerModal">
+              <h2 className="titleModalH2">Descrição</h2>
+              <p className="textPModal">{productDescription}</p>
+            </div>
+            <div className="sellerContainerModal">
+              <h2 className="titleModalH2">Vendedor</h2>
+              <p className="textPModal">Lorem Ipsum</p>
+            </div>
+            <div className="brandContainerModal">
+              <h2 className="titleModalH2">Marca</h2>
+              <p className="textPModal">{productBrand}</p>
+            </div>
+            <div className="colorContainerModal">
+              <h2 className="titleModalH2">Cor</h2>
+              <p className="textPModal">{productColor}</p>
+            </div>
+            <div className="productPriceContainerModal">
+              <h1 className="productPriceModal">{productPrice}</h1>
+            </div>
           </div>
-          <div className="sellerContainerModal">
-            <h2>Vendedor</h2>
-            <p>Lorem Ipsum</p>
-          </div>
-          <div className="brandContainerModal">
-            <h2>Marca</h2>
-            <p>{productBrand}</p>
-          </div>
-          <div className="colorContainerModal">
-            <h2>Cor</h2>
-            <p className="productColor">{productColor}</p>
-          </div>
-          <div className="productPriceContainerModal">
-            <h1 className="productPriceModal">{productPrice}</h1>
-          </div>
-
+        </div>
+        <div className="buttonsModal">
           <div className="delEditModal">
             <div className="editModalContainer">
               <img
