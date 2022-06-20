@@ -1,0 +1,98 @@
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 30px;
+  gap: 30px;
+}
+.closeModalImg {
+  width: 25px;
+  height: 25px;
+}
+.closeModalContainer {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+.closeAndTitleContainerModal {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.productTitleModalContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 30px;
+}
+.howManyProductsContainer {
+  display: flex;
+  padding-top: 30px;
+  gap: 20px;
+  justify-content: center;
+}
+.circleLessModal,
+.circlePlusModal {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  padding-bottom: 60px;
+}
+.descriptionContainerModal,
+.sellerContainerModal,
+.colorContainerModal,
+.brandContainerModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  padding-bottom: 60px;
+  width: 100%;
+}
+.productPriceContainerModal {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 65px;
+}
+.delEditModal {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+  width: 100%;
+}
+.delModalContainer,
+.editModalContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.delModal,
+.editModal {
+  width: 35px;
+  height: 35px;
+}
+.delModalText {
+  font-weight: 600;
+  font-size: 20px;
+  color: #f24e1e;
+}
+.editModalText {
+  font-weight: 600;
+  font-size: 20px;
+  color: #53b38d;
+}
+.addCartButtonModalContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.addCartButtonModal {
+  width: 100%;
+  cursor: pointer;
+  background-color: #53b38d;
+  border-radius: 5px;
+  color: #f8f8f8;
+  font-weight: 600;
+  font-size: 16px;
+  height: 50px;
+}

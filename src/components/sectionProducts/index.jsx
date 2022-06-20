@@ -8,7 +8,7 @@ import './style.css'
 export function SectionProducts(props) {
   const { search } = props
   const [products, setProducts] = useState([])
-  const [modalIsOpen, setModalIsOpen] = useState([false])
+  const [modalIsOpen, setModalIsOpen] = useState(false)
   useEffect(() => {
     setProducts(
       [...Array(10)].map(id => ({
@@ -24,7 +24,10 @@ export function SectionProducts(props) {
 
   return (
     <section id="productSection">
-      <Modal modalIsOpen={modalIsOpen} />
+      <Modal
+        modalIsOpen={modalIsOpen}
+        closeModal={() => setModalIsOpen(false)}
+      />
       {search ? <h1>Resultados de “{search}”</h1> : <h1>Produtos</h1>}
       <section>
         {products.map(product => (
