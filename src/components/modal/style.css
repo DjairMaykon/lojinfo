@@ -1,11 +1,11 @@
 .reactModal {
-  position: absolute;
-  inset: 40px;
   border: 1px solid rgb(204, 204, 204);
   background: #fafafa;
   overflow: auto;
   border-radius: 20px;
   outline: none;
+  position: absolute;
+  inset: 0;
 }
 .modalContainer {
   display: flex;
@@ -16,6 +16,7 @@
 .closeModalImg {
   width: 25px;
   height: 25px;
+  cursor: pointer;
 }
 .closeModalContainer {
   display: flex;
@@ -184,6 +185,10 @@
     display: flex;
     align-items: center;
   }
+  .reactModal {
+    position: absolute;
+    inset: 5% 3%;
+  }
 }
 
 @media screen and (min-width: 1250px) {
@@ -215,5 +220,9 @@
   .delModalText,
   .editModalText {
     font-size: 32px;
+  }
+  .reactModal {
+    position: absolute;
+    inset: 3% 5%;
   }
 }
