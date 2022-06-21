@@ -54,6 +54,10 @@
   gap: 73px;
 }
 
+#mainCart #cartContent .itemsCepContainer {
+  width: 100%;
+}
+
 @media screen and (min-width: 834px) {
   #mainCart section.emptyCart {
     gap: 30px;

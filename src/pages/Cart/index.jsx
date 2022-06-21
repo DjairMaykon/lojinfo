@@ -14,7 +14,17 @@ export function Cart() {
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    setItems([])
+    setItems(
+      [...Array(10)].map(id => ({
+        id,
+        urlImg:
+          'https://images.unsplash.com/photo-1589310243389-96a5483213a8?,ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVnaW5uZXJ8ZW58MHx8MHx8&w=1000&q=80',
+        title: 'camisa social polo original',
+        brand: 'polo',
+        cor: 'Azul',
+        price: 54,
+      }))
+    )
   }, [])
 
   return (
@@ -28,7 +38,7 @@ export function Cart() {
         <section id="cartContent">
           {items.length > 0 ? (
             <>
-              <section>
+              <section className="itemsCepContainer">
                 <CepForm />
                 <SectionItems />
               </section>

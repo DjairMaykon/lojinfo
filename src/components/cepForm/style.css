@@ -1,0 +1,71 @@
+#formCep {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+#formCep h1.titleFormCep {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 22px;
+  color: #275845;
+}
+#formCep h1.titleFormCep img {
+  width: min-content;
+}
+
+#formCep .inputFormCep {
+  width: 100%;
+  min-width: 315px;
+  max-width: 377px;
+  padding: 11px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+
+  border: 1px solid #9d9a95;
+  border-radius: 4px;
+}
+#formCep .inputFormCep input {
+  outline: none;
+  min-width: 0;
+}
+#formCep .inputFormCep a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #53b38d;
+
+  cursor: pointer;
+}
+
+#formCep hr {
+  min-width: 154px;
+  max-width: 348.01px;
+  height: 0px;
+  border: 1px solid #9d9a95;
+}
+
+@media screen and (min-width: 834px) {
+  #formCep hr {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  #formCep {
+    align-items: flex-start;
+  }
+  #formCep hr {
+    max-width: none;
+  }
+  #formCep .inputFormCep {
+    max-width: none;
+  }
+}
