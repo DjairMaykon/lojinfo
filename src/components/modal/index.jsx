@@ -29,7 +29,7 @@ export function Modal(props) {
     }
   }
   return (
-    <ReactModal isOpen={modalIsOpen}>
+    <ReactModal className="reactModal" isOpen={modalIsOpen}>
       <section className="modalContainer">
         <div className="closeAndTitleContainerModal">
           <div className="closeModalContainer">

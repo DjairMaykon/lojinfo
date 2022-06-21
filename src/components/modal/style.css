@@ -1,3 +1,12 @@
+.reactModal {
+  position: absolute;
+  inset: 40px;
+  border: 1px solid rgb(204, 204, 204);
+  background: #fafafa;
+  overflow: auto;
+  border-radius: 20px;
+  outline: none;
+}
 .modalContainer {
   display: flex;
   flex-direction: column;
