@@ -10,7 +10,7 @@
   background: #2ae89c;
   border-radius: 5px 5px 50px 50px;
   padding: 0px 30px;
-  padding-top: 115px;
+  padding-top: 40px;
   padding-bottom: 30px;
 }
 .textCategories {
@@ -34,12 +34,22 @@
   font-size: 12px;
 }
 .imgCategories {
+}
+.imgcategoriesContainer {
   padding: 0 100px;
   margin-bottom: -15%;
   z-index: 999;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (min-width: 834px) {
+  .cardContainer {
+    width: 32%;
+  }
+  .imgCategories {
+    align-self: center;
+  }
 }
 
 @media screen and (min-width: 1250px) {
@@ -52,5 +62,8 @@
   .textSeeMoreCategories {
     font-weight: 600;
     font-size: 16px;
+  }
+  .cardContainer {
+    width: 27%;
   }
 }
