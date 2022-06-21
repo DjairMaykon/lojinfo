@@ -46,6 +46,14 @@
   text-decoration-line: underline;
 }
 
+#mainCart #cartContent {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 73px;
+}
+
 @media screen and (min-width: 834px) {
   #mainCart section.emptyCart {
     gap: 30px;
@@ -53,7 +61,17 @@
 }
 
 @media screen and (min-width: 1250px) {
+  #mainCart {
+    align-items: flex-start;
+  }
   #mainCart section.emptyCart {
     text-align: left;
+    padding: 161px 90px 0;
+  }
+  #mainCart #cartContent {
+    flex-direction: row;
+  }
+  #mainCart #cartContent #recentViewContainer {
+    width: min-content;
   }
 }

@@ -25,24 +25,37 @@ export function Cart() {
           <img src={Arrow} alt="" />
           Carrinho
         </h1>
-        {items.length > 0 ? (
-          <section>
-            <section>
-              <CepForm />
-              <SectionItems />
-            </section>
-            <CartSummary />
-          </section>
-        ) : (
-          <section className="emptyCart">
-            <h1>Seu carrinho está vazio :(</h1>
-            <p>
-              <Link to="/">Continue navegando</Link> pela Lojinha e encontre
-              produtos incríveis!
-            </p>
-            <RecentView />
-          </section>
-        )}
+        <section id="cartContent">
+          {items.length > 0 ? (
+            <>
+              <section>
+                <CepForm />
+                <SectionItems />
+              </section>
+              <CartSummary />
+            </>
+          ) : (
+            <>
+              <section className="emptyCart">
+                <h1>Seu carrinho está vazio :(</h1>
+                <p>
+                  <Link to="/">Continue navegando</Link> pela Lojinha e encontre
+                  produtos incríveis!
+                </p>
+              </section>
+              <RecentView
+                product={{
+                  id: 0,
+                  urlImg:
+                    'https://images.unsplash.com/photo-1589310243389-96a5483213a8?,ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVnaW5uZXJ8ZW58MHx8MHx8&w=1000&q=80',
+                  title: 'camisa social polo original',
+                  category: 'polo',
+                  price: 54,
+                }}
+              />
+            </>
+          )}
+        </section>
       </main>
       <Footer />
     </>
