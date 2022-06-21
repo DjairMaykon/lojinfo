@@ -53,6 +53,9 @@
 }
 
 @media screen and (min-width: 834px) {
+  #formCep {
+    width: 100%;
+  }
   #formCep hr {
     width: 100%;
   }
@@ -61,6 +64,7 @@
 @media screen and (min-width: 1250px) {
   #formCep {
     align-items: flex-start;
+    max-width: 677px;
   }
   #formCep hr {
     max-width: none;
