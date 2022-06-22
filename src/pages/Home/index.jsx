@@ -7,11 +7,13 @@ import BolsaCategorias from '../../assets/bolsaCategorias.svg'
 import CamisaCategorias from '../../assets/camisaCategorias.svg'
 import TenisCategorias from '../../assets/tenisCategorias.svg'
 import './style.css'
+import { useState } from 'react'
 
 export function Home() {
+  const [search, setSearch] = useState('')
   return (
     <>
-      <Header />
+      <Header onSearch={text => setSearch(text)} />
       <main id="mainHome">
         <HeroHome />
         <section className="categotiasContainerHome">
@@ -19,7 +21,7 @@ export function Home() {
           <CategoriasHome text="Tênis" img={TenisCategorias} />
           <CategoriasHome text="Bolsas" img={BolsaCategorias} />
         </section>
-        <SectionProducts />
+        <SectionProducts search={search} />
       </main>
       <Footer />
     </>

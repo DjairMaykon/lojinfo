@@ -10,19 +10,25 @@ export function SectionProducts(props) {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    api.get('/produtos').then(response => {
-      setProducts(
-        response.data.response.map(produto => {
-          return {
-            id: produto.id,
-            urlImg: produto.url,
-            title: produto.titulo,
-            brand: produto.marca,
-            price: produto.preco,
-          }
-        })
-      )
-    })
+    api
+      .get('/produtos', {
+        params: {
+          pesquisa: search ?? '',
+        },
+      })
+      .then(response => {
+        setProducts(
+          response.data.response.map(produto => {
+            return {
+              id: produto.id,
+              urlImg: produto.url,
+              title: produto.titulo,
+              brand: produto.marca,
+              price: produto.preco,
+            }
+          })
+        )
+      })
   }, [search])
 
   return (

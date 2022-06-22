@@ -3,7 +3,8 @@ import LogoSvg from '../../assets/Logo.svg'
 import SearchIcon from '../../assets/SearchIcon.svg'
 import { Link } from 'react-router-dom'
 
-export function Header() {
+export function Header(props) {
+  const { onSearch } = props
   return (
     <>
       <input type="checkbox" id="checkboxMenuHamburger" />
@@ -12,7 +13,11 @@ export function Header() {
           <img src={LogoSvg} alt="Logo Lojinfo" />
         </figure>
         <label className="searchInput">
-          <input type="text" placeholder="Pesquise por um produto" />
+          <input
+            type="text"
+            onChange={e => onSearch(e.target.value)}
+            placeholder="Pesquise por um produto"
+          />
           <img src={SearchIcon} alt="Icone de Pesquisa" />
         </label>
         <nav>
