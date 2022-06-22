@@ -6,8 +6,43 @@ main#mainHome {
   gap: 60px;
 }
 
+.categotiasContainerHome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+@media screen and (min-width: 834px) {
+  .categotiasContainerHome {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 25px;
+  }
+}
+
 @media screen and (min-width: 1250px) {
   main#mainHome {
     gap: 120px;
+  }
+  .categotiasContainerHome {
+    display: flex;
+    gap: 90px;
+  }
+}
+#root main#mainHome #productSection {
+  padding: 0 30px 67px;
+}
+@media screen and (min-width: 834px) {
+  #root main#mainHome #productSection {
+    padding: 0 60px 100px;
+  }
+}
+@media screen and (min-width: 1250px) {
+  #root main#mainHome #productSection {
+    padding: 0 120px 100px;
   }
 }

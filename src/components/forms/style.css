@@ -1,7 +1,6 @@
-form {
+form#formProduto {
   display: flex;
   flex-direction: column;
-  width: 85%;
   margin: auto;
   gap: 25px;
 }
@@ -142,7 +141,7 @@ form {
 }
 
 @media screen and (min-width: 1250px) {
-  form {
+  form#formProduto {
     display: flex;
     flex-direction: row;
     justify-content: center;

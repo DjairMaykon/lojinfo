@@ -1,7 +1,7 @@
 import './style.css'
 
 export function CardProduct(props) {
-  const { urlImg, title, category, price, onClick } = props
+  const { urlImg, title, brand, price, onClick } = props
 
   return (
     <article className="cardProduct" onClick={onClick}>
@@ -11,7 +11,7 @@ export function CardProduct(props) {
       </div>
       <p className="price">R$ {price}</p>
       <p className="title">{title}</p>
-      <p className="category">{category}</p>
+      <p className="brand">{brand}</p>
     </article>
   )
 }

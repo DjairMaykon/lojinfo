@@ -7,7 +7,7 @@ import './style.css'
 
 export function Pagination(props) {
   const { pagesQuantity, onPageChange } = props
-  const [currentPage, setCurrentPage] = useState(7)
+  const [currentPage, setCurrentPage] = useState(1)
 
   useEffect(() => {
     onPageChange(currentPage)
@@ -15,7 +15,10 @@ export function Pagination(props) {
 
   const pagesBetween = initial =>
     [...Array(3)].map((n, i) => (
-      <h3 className={initial + i == currentPage ? 'active' : ''}>
+      <h3
+        onClick={() => setCurrentPage(initial + i)}
+        className={initial + i == currentPage ? 'active' : ''}
+      >
         {initial + i}
       </h3>
     ))
@@ -35,11 +38,11 @@ export function Pagination(props) {
               : currentPage
           )}
           <h3>...</h3>
-          <h3>{pagesQuantity}</h3>
+          <h3 onClick={() => setCurrentPage(pagesQuantity)}>{pagesQuantity}</h3>
         </>
       ) : (
         <>
-          <h3>{1}</h3>
+          <h3 onClick={() => setCurrentPage(1)}>{1}</h3>
           <h3>...</h3>
           {pagesBetween(
             currentPage + 3 > pagesQuantity ? pagesQuantity - 2 : currentPage

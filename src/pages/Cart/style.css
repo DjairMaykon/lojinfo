@@ -1,0 +1,115 @@
+#mainCart {
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+  align-items: center;
+  padding-left: 30px;
+}
+
+#mainCart h1.title {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 22px;
+  color: #275845;
+}
+#mainCart h1.title img {
+  width: min-content;
+  transform: rotate(-90deg);
+}
+
+#mainCart section.emptyCart {
+  display: flex;
+  flex-direction: column;
+  gap: 63px;
+  text-align: center;
+}
+#mainCart section.emptyCart h1 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 46px;
+  color: #275845;
+}
+#mainCart section.emptyCart p,
+#mainCart section.emptyCart p a {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 35px;
+  color: #252822;
+}
+#mainCart section.emptyCart p a {
+  text-decoration: none;
+  text-decoration-line: underline;
+}
+
+#mainCart #cartContent {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 73px;
+}
+
+#mainCart #cartContent .itemsCepContainer,
+#mainCart #cartContent .cartSummaryButtonContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+}
+
+#mainCart #cartContent .cartSummaryButtonContainer {
+  gap: 30px;
+}
+#mainCart #cartContent .cartSummaryButtonContainer button {
+  background: #53b38d;
+  border-radius: 5px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #f8f8f8;
+
+  width: 315px;
+  padding: 10px 30px;
+}
+
+@media screen and (min-width: 834px) {
+  #mainCart section.emptyCart {
+    gap: 30px;
+  }
+
+  #mainCart #cartContent .itemsCepContainer {
+    align-items: flex-start;
+  }
+
+  #mainCart #cartContent .cartSummaryButtonContainer button {
+    width: 387px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  #mainCart {
+    align-items: flex-start;
+  }
+  #mainCart section.emptyCart {
+    text-align: left;
+    padding: 161px 90px 0;
+  }
+  #mainCart #cartContent {
+    flex-direction: row;
+  }
+  #mainCart #cartContent #recentViewContainer {
+    width: min-content;
+  }
+
+  #mainCart #cartContent .cartSummaryButtonContainer {
+    align-items: flex-start;
+  }
+}
