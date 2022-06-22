@@ -9,9 +9,7 @@ main#mainHome {
 .categotiasContainerHome {
   display: flex;
   flex-direction: column;
-  width: 84%;
-  height: 22%;
-  margin: auto;
+  align-items: center;
   gap: 30px;
 }
 
@@ -19,6 +17,7 @@ main#mainHome {
   .categotiasContainerHome {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: flex-end;
     gap: 25px;

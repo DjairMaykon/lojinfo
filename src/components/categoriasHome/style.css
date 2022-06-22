@@ -1,6 +1,8 @@
 .cardContainer {
   display: flex;
   flex-direction: column;
+  min-width: 315px;
+  max-width: 500px;
 }
 .insideCardContainer {
   display: flex;
@@ -33,8 +35,6 @@
   font-weight: 600;
   font-size: 12px;
 }
-.imgCategories {
-}
 .imgcategoriesContainer {
   padding: 0 100px;
   margin-bottom: -15%;
@@ -44,9 +44,6 @@
 }
 
 @media screen and (min-width: 834px) {
-  .cardContainer {
-    width: 32%;
-  }
   .imgCategories {
     align-self: center;
   }
@@ -62,8 +59,5 @@
   .textSeeMoreCategories {
     font-weight: 600;
     font-size: 16px;
-  }
-  .cardContainer {
-    width: 27%;
   }
 }
