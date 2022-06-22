@@ -10,6 +10,8 @@
 }
 
 #mainHeader figure {
+  z-index: 999;
+
   display: flex;
   align-items: center;
   gap: 7.35px;
@@ -61,7 +63,10 @@
   color: #fafafa;
 }
 
-#mainHeader button.buttonHamburger {
+#checkboxMenuHamburger {
+  display: none;
+}
+#mainHeader .buttonHamburger {
   background: transparent;
 
   display: flex;
@@ -69,15 +74,52 @@
   justify-content: center;
   gap: 4px;
 
-  width: 30px;
-  height: 30px;
-
   cursor: pointer;
 }
-#mainHeader button.buttonHamburger label {
-  width: 100%;
+#mainHeader .buttonHamburger span {
   height: 5px;
+  width: 30px;
   background: #53b38d;
+
+  transition: all 0.5s ease-in-out;
+}
+#checkboxMenuHamburger:checked ~ #mainHeader .buttonHamburger span:first-child {
+  transform-origin: top left;
+  transform: rotate(40deg);
+}
+#checkboxMenuHamburger:checked
+  ~ #mainHeader
+  .buttonHamburger
+  span:nth-child(2) {
+  transform: translateX(100px) scaleX(0);
+}
+#checkboxMenuHamburger:checked ~ #mainHeader .buttonHamburger span:last-child {
+  transform-origin: left bottom;
+  transform: rotate(-40deg);
+}
+#checkboxMenuHamburger:checked ~ #mainHeader .searchInput {
+  display: none;
+}
+#checkboxMenuHamburger:checked ~ #mainHeader nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fafafa;
+
+  width: 100%;
+  height: 100vh;
+}
+#checkboxMenuHamburger:checked ~ #mainHeader nav ul {
+  height: 100%;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+}
+#checkboxMenuHamburger:checked ~ main {
+  display: none;
 }
 
 @media screen and (min-width: 834px) {
@@ -92,8 +134,16 @@
     font-size: 15px;
   }
 
-  #mainHeader button.buttonHamburger {
+  #mainHeader .buttonHamburger {
     display: none;
+  }
+
+  #checkboxMenuHamburger:checked ~ #mainHeader .searchInput {
+    display: flex;
+  }
+
+  #checkboxMenuHamburger:checked ~ #mainHeader nav {
+    position: initial;
   }
 }
 
