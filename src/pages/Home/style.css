@@ -33,3 +33,16 @@ main#mainHome {
     gap: 90px;
   }
 }
+#root main#mainHome #productSection {
+  padding: 0 30px 67px;
+}
+@media screen and (min-width: 834px) {
+  #root main#mainHome #productSection {
+    padding: 0 60px 100px;
+  }
+}
+@media screen and (min-width: 1250px) {
+  #root main#mainHome #productSection {
+    padding: 0 120px 100px;
+  }
+}

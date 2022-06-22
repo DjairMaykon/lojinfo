@@ -2,7 +2,7 @@ import './style.css'
 import defaultImageProduct from '../../assets/defaultImageProduct.svg'
 export function Forms(props) {
   return (
-    <form>
+    <form id="formProduto">
       <div className="imgForms">
         <h3 className="titleFormsH3">Preview da imagem</h3>
         <div className="innerConteinerImgForms">

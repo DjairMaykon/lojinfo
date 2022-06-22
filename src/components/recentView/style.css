@@ -1,0 +1,29 @@
+#recentViewContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  align-items: center;
+}
+
+#recentViewContainer h1 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 16px;
+  color: #275845;
+}
+
+#recentViewContainer section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 44px;
+}
+
+@media screen and (min-width: 1250px) {
+  #recentViewContainer {
+    align-items: flex-start;
+  }
+  #recentViewContainer section {
+    justify-content: start;
+  }
+}
