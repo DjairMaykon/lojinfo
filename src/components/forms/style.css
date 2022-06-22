@@ -77,6 +77,7 @@ form#formProduto {
 }
 
 .buttonForms {
+  cursor: pointer;
   background: #53b38d;
   border-radius: 5px;
   color: #fafafa;
