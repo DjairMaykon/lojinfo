@@ -39,11 +39,19 @@ export function Modal(props) {
         </div>
         <div className="innerContainerModal">
           <div className="imgHowManyModalContainer">
-            <img
-              className="productImg"
-              src={product && product.productImg}
-              alt="Imagem refrente ao produto selecionado."
-            />
+            <div className="imgContainerModal">
+              <div
+                className="productImg"
+                alt="Imagem refrente ao produto selecionado."
+                style={{
+                  backgroundImage: `url(${product && product.productImg})`,
+                }}
+              >
+                <p className="modalPImg">M</p>
+                <p className="modalPImg">G</p>
+              </div>
+            </div>
+
             <div className="howManyProductsContainer">
               <img
                 className="circlePlusModal"
