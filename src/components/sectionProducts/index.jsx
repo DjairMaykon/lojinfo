@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import api from '../../utils/api'
 import { CardProduct } from '../cardProduct'
 import { Pagination } from '../pagination'
 
@@ -9,16 +10,25 @@ export function SectionProducts(props) {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    setProducts(
-      [...Array(10)].map(id => ({
-        id,
-        urlImg:
-          'https://images.unsplash.com/photo-1589310243389-96a5483213a8?,ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVnaW5uZXJ8ZW58MHx8MHx8&w=1000&q=80',
-        title: 'camisa social polo original',
-        category: 'polo',
-        price: 54,
-      }))
-    )
+    api
+      .get('/produtos', {
+        params: {
+          pesquisa: search ?? '',
+        },
+      })
+      .then(response => {
+        setProducts(
+          response.data.response.map(produto => {
+            return {
+              id: produto.id,
+              urlImg: produto.url,
+              title: produto.titulo,
+              brand: produto.marca,
+              price: produto.preco,
+            }
+          })
+        )
+      })
   }, [search])
 
   return (
@@ -30,7 +40,7 @@ export function SectionProducts(props) {
             key={product.id}
             urlImg={product.urlImg}
             title={product.title}
-            category={product.category}
+            brand={product.brand}
             price={product.price}
           />
         ))}
