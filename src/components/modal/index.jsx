@@ -9,16 +9,7 @@ import DelModal from '../../assets/delModal.svg'
 ReactModal.setAppElement('#root')
 
 export function Modal(props) {
-  const {
-    modalIsOpen,
-    closeModal,
-    productTitle,
-    productDescription,
-    productBrand,
-    productColor,
-    productPrice,
-    productImg,
-  } = props
+  const { modalIsOpen, closeModal, product } = props
   let howManyProducts = 1
   function plusProducts() {
     howManyProducts += 1
@@ -41,14 +32,16 @@ export function Modal(props) {
             />
           </div>
           <div className="productTitleModalContainer">
-            <p className="productTitleModal">titutlo{productTitle}</p>
+            <p className="productTitleModal">
+              {product && product.productTitle}
+            </p>
           </div>
         </div>
         <div className="innerContainerModal">
           <div className="imgHowManyModalContainer">
             <img
               className="productImg"
-              src={productImg}
+              src={product && product.productImg}
               alt="Imagem refrente ao produto selecionado."
             />
             <div className="howManyProductsContainer">
@@ -70,7 +63,9 @@ export function Modal(props) {
           <div className="productSpec">
             <div className="descriptionContainerModal">
               <h2 className="titleModalH2">Descrição</h2>
-              <p className="textPModal">{productDescription}</p>
+              <p className="textPModal">
+                {product && product.productDescription}
+              </p>
             </div>
             <div className="sellerContainerModal">
               <h2 className="titleModalH2">Vendedor</h2>
@@ -78,14 +73,16 @@ export function Modal(props) {
             </div>
             <div className="brandContainerModal">
               <h2 className="titleModalH2">Marca</h2>
-              <p className="textPModal">{productBrand}</p>
+              <p className="textPModal">{product && product.productBrand}</p>
             </div>
             <div className="colorContainerModal">
               <h2 className="titleModalH2">Cor</h2>
-              <p className="textPModal">{productColor}</p>
+              <p className="textPModal">{product && product.productColor}</p>
             </div>
             <div className="productPriceContainerModal">
-              <h1 className="productPriceModal">{productPrice}</h1>
+              <h1 className="productPriceModal">
+                {product && product.productPrice}
+              </h1>
             </div>
           </div>
         </div>

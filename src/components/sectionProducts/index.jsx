@@ -10,6 +10,8 @@ export function SectionProducts(props) {
   const { search } = props
   const [products, setProducts] = useState([])
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [productModal, setProductModal] = useState()
+
   useEffect(() => {
     api
       .get('/produtos', {
@@ -32,17 +34,35 @@ export function SectionProducts(props) {
       })
   }, [search])
 
+  function openModal(productId) {
+    api.get('/produtos/' + productId).then(response => {
+      if (response.data.response.length > 0) {
+        const produto = response.data.response[0]
+        setProductModal({
+          productTitle: produto.titulo,
+          productDescription: produto.descricao,
+          productBrand: produto.marca,
+          productColor: produto.cor,
+          productPrice: produto.preco,
+          productImg: produto.url,
+        })
+        setModalIsOpen(true)
+      }
+    })
+  }
+
   return (
     <section id="productSection">
       <Modal
         modalIsOpen={modalIsOpen}
+        product={productModal}
         closeModal={() => setModalIsOpen(false)}
       />
       {search ? <h1>Resultados de “{search}”</h1> : <h1>Produtos</h1>}
       <section>
         {products.map(product => (
           <CardProduct
-            onClick={() => setModalIsOpen(true)}
+            onClick={() => openModal(product.id)}
             key={product.id}
             urlImg={product.urlImg}
             title={product.title}
