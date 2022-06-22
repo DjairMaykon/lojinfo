@@ -43,7 +43,17 @@ export function Cart() {
                 <CepForm />
                 <SectionCartItems items={items} />
               </section>
-              <CartSummary />
+              <section className="cartSummaryButtonContainer">
+                <CartSummary
+                  itemsQuantity={items.length}
+                  subTotal={items.reduce(
+                    (previous, current) =>
+                      (previous += current.quantity * current.price),
+                    0
+                  )}
+                  deliveryTax={14.9}
+                />
+              </section>
             </>
           ) : (
             <>
