@@ -1,7 +1,6 @@
 form#formProduto {
   display: flex;
   flex-direction: column;
-  width: 85%;
   margin: auto;
   gap: 25px;
 }
