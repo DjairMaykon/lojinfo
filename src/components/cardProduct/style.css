@@ -31,9 +31,7 @@
   color: #252822;
 }
 
-.cardProduct p.title,
-.cardProduct p.category,
-.cardProduct p.price {
+.cardProduct p {
   width: fit-content;
   cursor: pointer;
 }
@@ -44,7 +42,7 @@
   color: #53b38d;
 }
 .cardProduct p.title,
-.cardProduct p.category {
+.cardProduct p.brand {
   font-weight: 400;
   font-size: 18px;
   line-height: 16px;
@@ -52,7 +50,7 @@
 .cardProduct p.title {
   color: #252822;
 }
-.cardProduct p.category {
+.cardProduct p.brand {
   color: #a6a39f;
 }
 
