@@ -67,6 +67,18 @@
 #mainCart #cartContent .cartSummaryButtonContainer {
   gap: 30px;
 }
+#mainCart #cartContent .cartSummaryButtonContainer button {
+  background: #53b38d;
+  border-radius: 5px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #f8f8f8;
+
+  width: 315px;
+  padding: 10px 30px;
+}
 
 @media screen and (min-width: 834px) {
   #mainCart section.emptyCart {
@@ -75,6 +87,10 @@
 
   #mainCart #cartContent .itemsCepContainer {
     align-items: flex-start;
+  }
+
+  #mainCart #cartContent .cartSummaryButtonContainer button {
+    width: 387px;
   }
 }
 
@@ -91,5 +107,9 @@
   }
   #mainCart #cartContent #recentViewContainer {
     width: min-content;
+  }
+
+  #mainCart #cartContent .cartSummaryButtonContainer {
+    align-items: flex-start;
   }
 }

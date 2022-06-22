@@ -53,6 +53,7 @@ export function Cart() {
                   )}
                   deliveryTax={14.9}
                 />
+                <button>Finalizar Compra</button>
               </section>
             </>
           ) : (
