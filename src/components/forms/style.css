@@ -109,6 +109,10 @@ form#formProduto {
   gap: 25px;
 }
 
+.formsContainerLessImg input {
+  padding: 13px 10px;
+}
+
 @media screen and (min-width: 834px) {
   .brandColorFormsContainer {
     display: flex;
