@@ -2,13 +2,15 @@ import './style.css'
 import { Footer } from '../../components/footer'
 import { Header } from '../../components/header'
 import { Forms } from '../../components/forms'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import api from '../../utils/api'
 import { useEffect, useState } from 'react'
 
 export function Product() {
   const [product, setProduct] = useState()
   const { id } = useParams()
+  const navigate = useNavigate()
+
   useEffect(() => {
     if (id) {
       api.get(`produtos/${id}`).then(response => {
@@ -25,6 +27,8 @@ export function Product() {
             category: produto.categoria,
             subcategory: produto.subcategoria,
           })
+        } else {
+          navigate('/notfound')
         }
       })
     }
