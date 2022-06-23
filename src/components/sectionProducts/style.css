@@ -12,6 +12,10 @@
   gap: 20px;
 }
 
+#productSection section .cardProduct {
+  flex: 0;
+}
+
 @media screen and (min-width: 1250px) {
   #productSection {
     align-items: flex-start;

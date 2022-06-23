@@ -112,6 +112,9 @@ form#formProduto {
 .formsContainerLessImg input {
   padding: 13px 10px;
 }
+.formsContainerLessImg input.invalid {
+  border: 1px solid #c20a0a;
+}
 
 @media screen and (min-width: 834px) {
   .brandColorFormsContainer {
