@@ -69,16 +69,29 @@ export function SectionProducts(props) {
     api.get('/produtos/' + productId).then(response => {
       if (response.data.response.length > 0) {
         const produto = response.data.response[0]
-        setProductModal({
-          productId,
-          productTitle: produto.titulo,
-          productDescription: produto.descricao,
-          productBrand: produto.marca,
-          productColor: produto.cor,
-          productPrice: produto.preco,
-          productImg: produto.url,
+
+        api.get(`/itens/${productId}`).then(itemData => {
+          let isInCart = false
+          let quantity = 1
+
+          if (itemData.data.response.length) {
+            isInCart = true
+            quantity = itemData.data.response[0].quantidade
+          }
+
+          setProductModal({
+            productId,
+            productTitle: produto.titulo,
+            productDescription: produto.descricao,
+            productBrand: produto.marca,
+            productColor: produto.cor,
+            productPrice: produto.preco,
+            productImg: produto.url,
+            isInCart,
+            quantity,
+          })
+          setModalIsOpen(true)
         })
-        setModalIsOpen(true)
       }
     })
   }

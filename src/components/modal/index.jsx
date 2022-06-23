@@ -13,7 +13,9 @@ ReactModal.setAppElement('#root')
 
 export function Modal(props) {
   const { modalIsOpen, closeModal, product, onDeleteProduct } = props
-  const [howManyProducts, setHowManyProducts] = useState(1)
+  const [howManyProducts, setHowManyProducts] = useState(
+    product ? product.quantity : 1
+  )
   function plusProducts() {
     setHowManyProducts(howManyProducts + 1)
   }
@@ -31,6 +33,16 @@ export function Modal(props) {
         })
         .then(() => {
           alert('Produto dicionado no carrinho com sucesso.')
+        })
+  }
+  function editCartItem() {
+    if (product)
+      api
+        .put(`/itens/${product.productId}`, {
+          quantidade: howManyProducts,
+        })
+        .then(() => {
+          alert('Produto editado no carrinho com sucesso.')
         })
   }
   return (
@@ -134,8 +146,16 @@ export function Modal(props) {
             </div>
           </div>
           <div className="addCartButtonModalContainer">
-            <button className="addCartButtonModal" onClick={addCartItem}>
-              Adicionar ao carrinho
+            <button
+              className="addCartButtonModal"
+              onClick={() => {
+                if (product && product.isInCart) editCartItem()
+                else addCartItem()
+              }}
+            >
+              {product && product.isInCart
+                ? 'Editar item do carrinho'
+                : 'Adicionar ao carrinho'}
             </button>
           </div>
         </div>
