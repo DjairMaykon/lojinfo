@@ -11,12 +11,27 @@ export function SectionProducts(props) {
   const [products, setProducts] = useState([])
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [productModal, setProductModal] = useState()
+  const [page, setPage] = useState(1)
+  const itemsPerPage = 10
+  const [pageQuantity, setPageQuantity] = useState(1)
+
+  useEffect(() => {
+    api.get('/produtos/total').then(response => {
+      if (response.data.response.length) {
+        setPageQuantity(
+          Math.ceil(parseInt(response.data.response[0].total) / itemsPerPage)
+        )
+      }
+    })
+  }, [])
 
   useEffect(() => {
     api
       .get('/produtos', {
         params: {
           pesquisa: search ?? '',
+          limit: itemsPerPage,
+          page: page,
         },
       })
       .then(response => {
@@ -32,7 +47,11 @@ export function SectionProducts(props) {
           })
         )
       })
-  }, [search])
+  }, [search, page])
+
+  function handlePageChange(newPage) {
+    setPage(newPage)
+  }
 
   function openModal(productId) {
     api.get('/produtos/' + productId).then(response => {
@@ -71,7 +90,12 @@ export function SectionProducts(props) {
           />
         ))}
       </section>
-      <Pagination pagesQuantity={20} onPageChange={page => console.log(page)} />
+      {pageQuantity && pageQuantity > 1 && (
+        <Pagination
+          pagesQuantity={pageQuantity}
+          onPageChange={handlePageChange}
+        />
+      )}
     </section>
   )
 }

@@ -14,8 +14,9 @@ form#formProduto {
   border-radius: 5px;
 }
 .defaultImageProduct {
-  width: 120px;
-  height: 110px;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .titleFormsH4 {
@@ -77,6 +78,7 @@ form#formProduto {
 }
 
 .buttonForms {
+  cursor: pointer;
   background: #53b38d;
   border-radius: 5px;
   color: #fafafa;
@@ -106,6 +108,13 @@ form#formProduto {
   display: flex;
   flex-direction: column;
   gap: 25px;
+}
+
+.formsContainerLessImg input {
+  padding: 13px 10px;
+}
+.formsContainerLessImg input.invalid {
+  border: 1px solid #c20a0a;
 }
 
 @media screen and (min-width: 834px) {

@@ -8,14 +8,14 @@ import { useEffect, useState } from 'react'
 
 import './style.css'
 import { RecentView } from '../../components/recentView'
-import { Link } from 'react-router-dom'
+import { EmptySection } from '../../components/emptySection'
 
 export function Cart() {
   const [items, setItems] = useState([])
 
   useEffect(() => {
     setItems(
-      [...Array(3)].map(id => ({
+      [...Array(0)].map(id => ({
         id,
         urlImg:
           'https://images.unsplash.com/photo-1589310243389-96a5483213a8?,ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVnaW5uZXJ8ZW58MHx8MHx8&w=1000&q=80',
@@ -58,13 +58,7 @@ export function Cart() {
             </>
           ) : (
             <>
-              <section className="emptyCart">
-                <h1>Seu carrinho está vazio :(</h1>
-                <p>
-                  <Link to="/">Continue navegando</Link> pela Lojinha e encontre
-                  produtos incríveis!
-                </p>
-              </section>
+              <EmptySection text="Seu carrinho está vazio" />
               <RecentView
                 product={{
                   id: 0,
