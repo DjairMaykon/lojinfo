@@ -8,14 +8,16 @@ import DelModal from '../../assets/delModal.svg'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import api from '../../utils/api'
+import { useEffect } from 'react'
 
 ReactModal.setAppElement('#root')
 
 export function Modal(props) {
   const { modalIsOpen, closeModal, product, onDeleteProduct } = props
-  const [howManyProducts, setHowManyProducts] = useState(
-    product ? product.quantity : 1
-  )
+  const [howManyProducts, setHowManyProducts] = useState(1)
+  useEffect(() => {
+    if (product) setHowManyProducts(product.quantity)
+  }, [product])
   function plusProducts() {
     setHowManyProducts(howManyProducts + 1)
   }
