@@ -18,6 +18,7 @@ export function Pagination(props) {
       <h3
         onClick={() => setCurrentPage(initial + i)}
         className={initial + i == currentPage ? 'active' : ''}
+        key={`page-${i}`}
       >
         {initial + i}
       </h3>
@@ -30,24 +31,38 @@ export function Pagination(props) {
         alt=""
         onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
       />
-      {currentPage <= pagesQuantity / 2 ? (
-        <>
-          {pagesBetween(
-            currentPage + 3 > pagesQuantity / 2
-              ? pagesQuantity / 2 - 2
-              : currentPage
-          )}
-          <h3>...</h3>
-          <h3 onClick={() => setCurrentPage(pagesQuantity)}>{pagesQuantity}</h3>
-        </>
+      {pagesQuantity > 5 ? (
+        currentPage <= pagesQuantity / 2 ? (
+          <>
+            {pagesBetween(
+              currentPage + 3 > pagesQuantity / 2
+                ? pagesQuantity / 2 - 2
+                : currentPage
+            )}
+            <h3>...</h3>
+            <h3 onClick={() => setCurrentPage(pagesQuantity)}>
+              {pagesQuantity}
+            </h3>
+          </>
+        ) : (
+          <>
+            <h3 onClick={() => setCurrentPage(1)}>{1}</h3>
+            <h3>...</h3>
+            {pagesBetween(
+              currentPage + 3 > pagesQuantity ? pagesQuantity - 2 : currentPage
+            )}
+          </>
+        )
       ) : (
-        <>
-          <h3 onClick={() => setCurrentPage(1)}>{1}</h3>
-          <h3>...</h3>
-          {pagesBetween(
-            currentPage + 3 > pagesQuantity ? pagesQuantity - 2 : currentPage
-          )}
-        </>
+        [...Array(pagesQuantity)].map((n, i) => (
+          <h3
+            onClick={() => setCurrentPage(i + 1)}
+            className={i + 1 == currentPage ? 'active' : ''}
+            key={`page-${i}`}
+          >
+            {i + 1}
+          </h3>
+        ))
       )}
       <img
         src={PaginationArrowRight}

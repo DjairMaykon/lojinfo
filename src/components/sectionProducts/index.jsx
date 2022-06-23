@@ -8,12 +8,27 @@ import './style.css'
 export function SectionProducts(props) {
   const { search } = props
   const [products, setProducts] = useState([])
+  const [page, setPage] = useState(1)
+  const itemsPerPage = 10
+  const [pageQuantity, setPageQuantity] = useState(1)
+
+  useEffect(() => {
+    api.get('/produtos/total').then(response => {
+      if (response.data.response.length) {
+        setPageQuantity(
+          Math.ceil(parseInt(response.data.response[0].total) / itemsPerPage)
+        )
+      }
+    })
+  }, [])
 
   useEffect(() => {
     api
       .get('/produtos', {
         params: {
           pesquisa: search ?? '',
+          limit: itemsPerPage,
+          page: page,
         },
       })
       .then(response => {
@@ -29,7 +44,11 @@ export function SectionProducts(props) {
           })
         )
       })
-  }, [search])
+  }, [search, page])
+
+  function handlePageChange(newPage) {
+    setPage(newPage)
+  }
 
   return (
     <section id="productSection">
@@ -45,7 +64,12 @@ export function SectionProducts(props) {
           />
         ))}
       </section>
-      <Pagination pagesQuantity={20} onPageChange={page => console.log(page)} />
+      {pageQuantity && pageQuantity > 1 && (
+        <Pagination
+          pagesQuantity={pageQuantity}
+          onPageChange={handlePageChange}
+        />
+      )}
     </section>
   )
 }
