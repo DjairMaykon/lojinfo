@@ -1,5 +1,4 @@
 import './style.css'
-import defaultImageProduct from '../../assets/defaultImageProduct.svg'
 import { useState } from 'react'
 
 export function Forms(props) {
@@ -73,9 +72,15 @@ export function Forms(props) {
       <div className="imgForms">
         <h3 className="titleFormsH3">Preview da imagem</h3>
         <div className="innerConteinerImgForms">
-          <img
+          <div
             className="defaultImageProduct"
-            src={productUrl ? productUrl : defaultImageProduct}
+            style={{
+              backgroundImage: productUrl
+                ? `url(${productUrl})`
+                : 'url(/src/assets/defaultImageProduct.svg)',
+              width: productUrl ? '100%' : '120px',
+              height: productUrl ? '100%' : '110px',
+            }}
             alt="Modelo para adicionar a imagem do produto."
           />
         </div>
