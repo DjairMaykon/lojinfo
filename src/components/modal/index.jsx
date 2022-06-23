@@ -5,19 +5,33 @@ import CirclePlusModal from '../../assets/circlePlusModal.svg'
 import CircleLessModal from '../../assets/circleLessModal.svg'
 import EditModal from '../../assets/editModal.svg'
 import DelModal from '../../assets/delModal.svg'
+import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import api from '../../utils/api'
 
 ReactModal.setAppElement('#root')
 
 export function Modal(props) {
-  const { modalIsOpen, closeModal, product } = props
-  let howManyProducts = 1
+  const { modalIsOpen, closeModal, product, onDeleteProduct } = props
+  const [howManyProducts, setHowManyProducts] = useState(1)
   function plusProducts() {
-    howManyProducts += 1
+    setHowManyProducts(howManyProducts + 1)
   }
   function lessProducts() {
-    if (howManyProducts >= 2) {
-      howManyProducts -= 1
+    if (howManyProducts > 1) {
+      setHowManyProducts(howManyProducts - 1)
     }
+  }
+  function addCartItem() {
+    if (product)
+      api
+        .post('/itens', {
+          id_produtos: product.productId,
+          quantidade: howManyProducts,
+        })
+        .then(() => {
+          alert('Produto dicionado no carrinho com sucesso.')
+        })
   }
   return (
     <ReactModal className="reactModal" isOpen={modalIsOpen}>
@@ -54,17 +68,17 @@ export function Modal(props) {
 
             <div className="howManyProductsContainer">
               <img
-                className="circlePlusModal"
-                src={CirclePlusModal}
-                alt="Botão mais unidades do produto."
-                onClick={plusProducts()}
-              />
-              <h3 className="howManyProductstext">{howManyProducts}</h3>
-              <img
                 className="circleLessModal"
                 src={CircleLessModal}
                 alt="Botão menos unidades do produto."
-                onClick={lessProducts()}
+                onClick={lessProducts}
+              />
+              <h3 className="howManyProductstext">{howManyProducts}</h3>
+              <img
+                className="circlePlusModal"
+                src={CirclePlusModal}
+                alt="Botão mais unidades do produto."
+                onClick={plusProducts}
               />
             </div>
           </div>
@@ -96,15 +110,21 @@ export function Modal(props) {
         </div>
         <div className="buttonsModal">
           <div className="delEditModal">
-            <div className="editModalContainer">
-              <img
-                className="editModal"
-                src={EditModal}
-                alt="Lápis refrente ao botão editar produto."
-              />
-              <h5 className="editModalText">Editar</h5>
-            </div>
-            <div className="delModalContainer">
+            <Link to={`/product/${product && product.productId}`}>
+              <div className="editModalContainer">
+                <img
+                  className="editModal"
+                  src={EditModal}
+                  alt="Lápis refrente ao botão editar produto."
+                />
+                <h5 className="editModalText">Editar</h5>
+              </div>
+            </Link>
+
+            <div
+              className="delModalContainer"
+              onClick={() => product && onDeleteProduct(product.productId)}
+            >
               <img
                 className="delModal"
                 src={DelModal}
@@ -114,7 +134,7 @@ export function Modal(props) {
             </div>
           </div>
           <div className="addCartButtonModalContainer">
-            <button className="addCartButtonModal">
+            <button className="addCartButtonModal" onClick={addCartItem}>
               Adicionar ao carrinho
             </button>
           </div>

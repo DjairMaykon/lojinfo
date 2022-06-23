@@ -26,6 +26,14 @@ export function SectionProducts(props) {
   }, [])
 
   useEffect(() => {
+    getProducts()
+  }, [search, page])
+
+  function handlePageChange(newPage) {
+    setPage(newPage)
+  }
+
+  function getProducts() {
     api
       .get('/produtos', {
         params: {
@@ -47,10 +55,14 @@ export function SectionProducts(props) {
           })
         )
       })
-  }, [search, page])
+  }
 
-  function handlePageChange(newPage) {
-    setPage(newPage)
+  function deleteProduct(productId) {
+    api.delete(`/produtos/${productId}`).then(() => {
+      alert('produto deletado com sucesso')
+      getProducts()
+      setModalIsOpen(false)
+    })
   }
 
   function openModal(productId) {
@@ -58,6 +70,7 @@ export function SectionProducts(props) {
       if (response.data.response.length > 0) {
         const produto = response.data.response[0]
         setProductModal({
+          productId,
           productTitle: produto.titulo,
           productDescription: produto.descricao,
           productBrand: produto.marca,
@@ -76,6 +89,7 @@ export function SectionProducts(props) {
         modalIsOpen={modalIsOpen}
         product={productModal}
         closeModal={() => setModalIsOpen(false)}
+        onDeleteProduct={deleteProduct}
       />
       {search ? <h1>Resultados de “{search}”</h1> : <h1>Produtos</h1>}
       <section>
