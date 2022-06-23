@@ -1,0 +1,30 @@
+.emptySection {
+  display: flex;
+  flex-direction: column;
+  gap: 63px;
+  text-align: center;
+}
+.emptySection h1 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 46px;
+  color: #275845;
+}
+.emptySection p,
+.emptySection p a {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 35px;
+  color: #252822;
+}
+.emptySection p a {
+  text-decoration: none;
+  text-decoration-line: underline;
+}
+
+@media screen and (min-width: 834px) {
+  .emptySection {
+    gap: 30px;
+  }
+}
