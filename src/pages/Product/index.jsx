@@ -5,6 +5,7 @@ import { Forms } from '../../components/forms'
 import { useParams, useNavigate } from 'react-router-dom'
 import api from '../../utils/api'
 import { useEffect, useState } from 'react'
+import { toast } from 'react-hot-toast'
 
 export function Product() {
   const [product, setProduct] = useState()
@@ -48,7 +49,7 @@ export function Product() {
           subcategoria: product.subcategory,
         })
         .then(() => {
-          alert('Produto editado com sucesso')
+          toast.success('Produto editado com sucesso.')
         })
     } else {
       api
@@ -63,7 +64,7 @@ export function Product() {
           subcategoria: product.subcategory,
         })
         .then(() => {
-          alert('Produto adicionado com sucesso')
+          toast.success('Produto adicionado com sucesso.')
         })
     }
   }

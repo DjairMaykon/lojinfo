@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import api from '../../utils/api'
 import { useEffect } from 'react'
+import { toast } from 'react-hot-toast'
 
 ReactModal.setAppElement('#root')
 
@@ -34,7 +35,7 @@ export function Modal(props) {
           quantidade: howManyProducts,
         })
         .then(() => {
-          alert('Produto dicionado no carrinho com sucesso.')
+          toast.success('Produto adicionado ao carrinho com sucesso.')
         })
       closeModal()
     }
@@ -46,7 +47,7 @@ export function Modal(props) {
           quantidade: howManyProducts,
         })
         .then(() => {
-          alert('Produto editado no carrinho com sucesso.')
+          toast.success('Produto editado no carrinho com sucesso.')
         })
       closeModal()
     }
