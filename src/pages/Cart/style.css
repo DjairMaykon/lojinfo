@@ -39,12 +39,6 @@
   align-items: center;
 }
 
-#mainCart #cartContent .itemsCepContainer {
-  flex: 2;
-  min-width: 600px;
-  max-width: 800px;
-}
-
 #mainCart #cartContent .itemsCepContainer,
 #mainCart #cartContent .cartSummaryButtonContainer {
   display: flex;
@@ -54,8 +48,6 @@
 }
 
 #mainCart #cartContent .cartSummaryButtonContainer {
-  flex: 1;
-  max-width: 680px;
   gap: 30px;
 }
 #mainCart #cartContent .cartSummaryButtonContainer button {
@@ -98,8 +90,14 @@
   #mainCart #cartContent #recentViewContainer {
     width: min-content;
   }
-
+  #mainCart #cartContent .itemsCepContainer {
+    flex: 2;
+    min-width: 600px;
+    max-width: 800px;
+  }
   #mainCart #cartContent .cartSummaryButtonContainer {
+    flex: 1;
+    max-width: 680px;
     align-items: flex-start;
   }
 }
