@@ -29,6 +29,14 @@
   gap: 73px;
 }
 
+#mainCart #cartContent .itemsCepContainer #sectionCartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  width: 100%;
+  align-items: center;
+}
+
 #mainCart #cartContent .itemsCepContainer,
 #mainCart #cartContent .cartSummaryButtonContainer {
   width: 100%;
@@ -75,6 +83,9 @@
   }
   #mainCart #cartContent {
     flex-direction: row;
+  }
+  #mainCart #cartContent .itemsCepContainer #sectionCartItems {
+    align-items: flex-start;
   }
   #mainCart #cartContent #recentViewContainer {
     width: min-content;
