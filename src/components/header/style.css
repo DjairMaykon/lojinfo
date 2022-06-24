@@ -10,8 +10,6 @@
 }
 
 #mainHeader figure {
-  z-index: 999;
-
   display: flex;
   align-items: center;
   gap: 7.35px;
@@ -120,6 +118,9 @@
 }
 #checkboxMenuHamburger:checked ~ main {
   display: none;
+}
+#checkboxMenuHamburger:checked ~ #mainHeader figure {
+  z-index: 999;
 }
 
 @media screen and (min-width: 834px) {

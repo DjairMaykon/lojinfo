@@ -1,10 +1,10 @@
 import './style.css'
 
 export function CardProduct(props) {
-  const { urlImg, title, brand, price } = props
+  const { urlImg, title, brand, price, onClick } = props
 
   return (
-    <article className="cardProduct">
+    <article className="cardProduct" onClick={onClick}>
       <div className="img" style={{ backgroundImage: `url(${urlImg})` }}>
         <span>M</span>
         <span>G</span>
