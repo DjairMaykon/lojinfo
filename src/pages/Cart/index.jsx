@@ -3,30 +3,59 @@ import { Header } from '../../components/header'
 import Arrow from '../../assets/selectForms.svg'
 import { CartSummary } from '../../components/cartSummary'
 import { CepForm } from '../../components/cepForm'
-import { SectionCartItems } from '../../components/sectionCartItems'
 import { useEffect, useState } from 'react'
 
 import './style.css'
 import { RecentView } from '../../components/recentView'
 import { EmptySection } from '../../components/emptySection'
+import api from '../../utils/api'
+import { CardCartItem } from '../../components/cardCartItem'
 
 export function Cart() {
   const [items, setItems] = useState([])
+  const [deliveryTax, setDeliveryTax] = useState()
+  const [subtotal, setSubtotal] = useState()
 
   useEffect(() => {
-    setItems(
-      [...Array(0)].map(id => ({
-        id,
-        urlImg:
-          'https://images.unsplash.com/photo-1589310243389-96a5483213a8?,ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVnaW5uZXJ8ZW58MHx8MHx8&w=1000&q=80',
-        title: 'camisa social polo original',
-        brand: 'polo',
-        color: 'Azul',
-        price: 54,
-        quantity: 3,
-      }))
-    )
+    refreshCart()
   }, [])
+
+  function refreshCart() {
+    api.get('/itens').then(response => {
+      setItems(
+        response.data.response.map(item => {
+          return {
+            id: item.id,
+            urlImg: item.url,
+            title: item.titulo,
+            brand: item.marca,
+            color: item.cor,
+            price: item.preco,
+            quantity: item.quantidade,
+          }
+        })
+      )
+    })
+    api.get('/pedidos/1').then(response => {
+      if (response.data.response.length) {
+        const pedido = response.data.response[0]
+        setDeliveryTax(pedido.entrega)
+        setSubtotal(pedido.subtotal)
+      }
+    })
+  }
+
+  function handleChangeItemQuantity(id, newQuantity) {
+    api
+      .put(`/itens/${id}`, {
+        quantidade: newQuantity,
+      })
+      .then(() => refreshCart())
+  }
+
+  function handleDeleteItem(id) {
+    api.delete(`itens/${id}`).then(() => refreshCart())
+  }
 
   return (
     <>
@@ -41,18 +70,25 @@ export function Cart() {
             <>
               <section className="itemsCepContainer">
                 <CepForm />
-                <SectionCartItems items={items} />
+                <section id="sectionCartItems">
+                  {items.map((item, index) => (
+                    <CardCartItem
+                      key={index}
+                      item={item}
+                      onChangeItemQuantity={handleChangeItemQuantity}
+                      onDeleteItem={handleDeleteItem}
+                    />
+                  ))}
+                </section>
               </section>
               <section className="cartSummaryButtonContainer">
-                <CartSummary
-                  itemsQuantity={items.length}
-                  subTotal={items.reduce(
-                    (previous, current) =>
-                      (previous += current.quantity * current.price),
-                    0
-                  )}
-                  deliveryTax={14.9}
-                />
+                {subtotal && deliveryTax && (
+                  <CartSummary
+                    itemsQuantity={items.length}
+                    subTotal={subtotal}
+                    deliveryTax={deliveryTax}
+                  />
+                )}
                 <button>Finalizar Compra</button>
               </section>
             </>
