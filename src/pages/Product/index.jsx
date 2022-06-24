@@ -36,7 +36,6 @@ export function Product() {
 
   function onSendForm(product) {
     if (id) {
-      console.log(product)
       api
         .put(`produtos/${id}`, {
           preco: product.price,

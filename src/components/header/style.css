@@ -1,18 +1,25 @@
 #mainHeader {
+  background: #fafafa;
+}
+
+.headerContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   padding: 10px 30px;
   gap: 20px;
-
-  background: #fafafa;
+  max-width: 1822px;
+  margin: 0 auto;
 }
 
 #mainHeader figure {
   display: flex;
   align-items: center;
   gap: 7.35px;
+}
+.logoLojinhaHeaderContainer {
+  cursor: pointer;
 }
 
 #mainHeader .searchInput {
