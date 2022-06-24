@@ -33,11 +33,13 @@ export function Footer() {
             </li>
           </ul>
           <div className="logoLojinhaFooterContainer">
-            <img
-              className="logoLojinhaFooter"
-              src={Logo}
-              alt="Logo da Lojinha"
-            />
+            <Link to="/">
+              <img
+                className="logoLojinhaFooter"
+                src={Logo}
+                alt="Logo da Lojinha"
+              />
+            </Link>
           </div>
           <div className="socicalMediaLogosFooter">
             <img src={facebookLogo} alt="Logo do Facebook" />

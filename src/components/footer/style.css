@@ -42,6 +42,9 @@ footer {
   font-size: 12px;
   font-weight: 400;
 }
+.logoLojinhaFooterContainer {
+  cursor: pointer;
+}
 
 @media (min-width: 834px) {
 }
