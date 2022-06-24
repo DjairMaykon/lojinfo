@@ -27,7 +27,7 @@ export function Modal(props) {
     }
   }
   function addCartItem() {
-    if (product)
+    if (product) {
       api
         .post('/itens', {
           id_produtos: product.productId,
@@ -36,9 +36,11 @@ export function Modal(props) {
         .then(() => {
           alert('Produto dicionado no carrinho com sucesso.')
         })
+      closeModal()
+    }
   }
   function editCartItem() {
-    if (product)
+    if (product) {
       api
         .put(`/itens/${product.productId}`, {
           quantidade: howManyProducts,
@@ -46,6 +48,8 @@ export function Modal(props) {
         .then(() => {
           alert('Produto editado no carrinho com sucesso.')
         })
+      closeModal()
+    }
   }
   return (
     <ReactModal className="reactModal" isOpen={modalIsOpen}>
