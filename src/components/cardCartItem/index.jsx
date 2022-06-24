@@ -1,4 +1,5 @@
 import './style.css'
+import { toast } from 'react-hot-toast'
 
 export function CardCartItem(props) {
   const { item, onChangeItemQuantity, onDeleteItem } = props
@@ -36,7 +37,13 @@ export function CardCartItem(props) {
             </a>
           </div>
           <h4>R$ {item.price.toFixed(2)}</h4>
-          <a className="buttonDeleteItem" onClick={() => onDeleteItem(item.id)}>
+          <a
+            className="buttonDeleteItem"
+            onClick={() => {
+              onDeleteItem(item.id)
+              toast.success('Produto deltado do carrinho com sucesso.')
+            }}
+          >
             Deletar
           </a>
         </div>

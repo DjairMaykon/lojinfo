@@ -3,6 +3,7 @@ import api from '../../utils/api'
 import { CardProduct } from '../cardProduct'
 import { Pagination } from '../pagination'
 import { Modal } from '../modal'
+import { toast } from 'react-hot-toast'
 
 import './style.css'
 
@@ -59,7 +60,7 @@ export function SectionProducts(props) {
 
   function deleteProduct(productId) {
     api.delete(`/produtos/${productId}`).then(() => {
-      alert('produto deletado com sucesso')
+      toast.success('Produto deletado com sucesso')
       getProducts()
       setModalIsOpen(false)
     })
