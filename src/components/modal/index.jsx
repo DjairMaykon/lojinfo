@@ -121,7 +121,7 @@ export function Modal(props) {
             </div>
             <div className="productPriceContainerModal">
               <h1 className="productPriceModal">
-                {product && product.productPrice}
+                R${product && product.productPrice.toFixed(2)}
               </h1>
             </div>
           </div>
