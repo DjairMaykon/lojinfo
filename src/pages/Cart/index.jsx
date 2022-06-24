@@ -60,54 +60,56 @@ export function Cart() {
   return (
     <>
       <Header />
-      <main id="mainCart">
-        <h1 className="title">
-          <img src={Arrow} alt="" />
-          Carrinho
-        </h1>
-        <section id="cartContent">
-          {items.length > 0 ? (
-            <>
-              <section className="itemsCepContainer">
-                <CepForm />
-                <section id="sectionCartItems">
-                  {items.map((item, index) => (
-                    <CardCartItem
-                      key={index}
-                      item={item}
-                      onChangeItemQuantity={handleChangeItemQuantity}
-                      onDeleteItem={handleDeleteItem}
-                    />
-                  ))}
+      <main>
+        <div id="mainCart">
+          <h1 className="title">
+            <img src={Arrow} alt="" />
+            Carrinho
+          </h1>
+          <section id="cartContent">
+            {items.length > 0 ? (
+              <>
+                <section className="itemsCepContainer">
+                  <CepForm />
+                  <section id="sectionCartItems">
+                    {items.map((item, index) => (
+                      <CardCartItem
+                        key={index}
+                        item={item}
+                        onChangeItemQuantity={handleChangeItemQuantity}
+                        onDeleteItem={handleDeleteItem}
+                      />
+                    ))}
+                  </section>
                 </section>
-              </section>
-              <section className="cartSummaryButtonContainer">
-                {subtotal && deliveryTax && (
-                  <CartSummary
-                    itemsQuantity={items.length}
-                    subTotal={subtotal}
-                    deliveryTax={deliveryTax}
-                  />
-                )}
-                <button>Finalizar Compra</button>
-              </section>
-            </>
-          ) : (
-            <>
-              <EmptySection text="Seu carrinho está vazio" />
-              <RecentView
-                product={{
-                  id: 0,
-                  urlImg:
-                    'https://images.unsplash.com/photo-1589310243389-96a5483213a8?,ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVnaW5uZXJ8ZW58MHx8MHx8&w=1000&q=80',
-                  title: 'camisa social polo original',
-                  category: 'polo',
-                  price: 54,
-                }}
-              />
-            </>
-          )}
-        </section>
+                <section className="cartSummaryButtonContainer">
+                  {subtotal && deliveryTax && (
+                    <CartSummary
+                      itemsQuantity={items.length}
+                      subTotal={subtotal}
+                      deliveryTax={deliveryTax}
+                    />
+                  )}
+                  <button>Finalizar Compra</button>
+                </section>
+              </>
+            ) : (
+              <>
+                <EmptySection text="Seu carrinho está vazio" />
+                <RecentView
+                  product={{
+                    id: 0,
+                    urlImg:
+                      'https://images.unsplash.com/photo-1589310243389-96a5483213a8?,ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVnaW5uZXJ8ZW58MHx8MHx8&w=1000&q=80',
+                    title: 'camisa social polo original',
+                    category: 'polo',
+                    price: 54,
+                  }}
+                />
+              </>
+            )}
+          </section>
+        </div>
       </main>
       <Footer />
     </>

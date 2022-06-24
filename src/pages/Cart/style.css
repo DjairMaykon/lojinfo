@@ -3,7 +3,8 @@
   flex-direction: column;
   gap: 65px;
   align-items: center;
-  padding-left: 30px;
+  max-width: 1822px;
+  margin: 0 auto;
 }
 
 #mainCart h1.title {
@@ -26,6 +27,7 @@
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 73px;
 }
 
@@ -37,10 +39,14 @@
   align-items: center;
 }
 
+#mainCart #cartContent .itemsCepContainer {
+  flex: 2;
+  min-width: 600px;
+  max-width: 800px;
+}
+
 #mainCart #cartContent .itemsCepContainer,
 #mainCart #cartContent .cartSummaryButtonContainer {
-  width: 100%;
-
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -48,6 +54,8 @@
 }
 
 #mainCart #cartContent .cartSummaryButtonContainer {
+  flex: 1;
+  max-width: 680px;
   gap: 30px;
 }
 #mainCart #cartContent .cartSummaryButtonContainer button {
