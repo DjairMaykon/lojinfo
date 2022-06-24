@@ -5,6 +5,9 @@
   outline: none;
   position: absolute;
   inset: 0;
+  max-width: 1728px;
+  max-height: 1180px;
+  margin: auto;
 }
 .modalContainer {
   display: flex;
