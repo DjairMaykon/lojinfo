@@ -1,5 +1,8 @@
 footer {
   background-color: #f5f5dc;
+  width: 100%;
+}
+.footerContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,6 +10,7 @@ footer {
   width: 100%;
   gap: 30px;
   padding-bottom: 30px;
+  margin: 0 auto;
 }
 
 .logoMenuSocialContainer {
@@ -37,6 +41,12 @@ footer {
   color: #252822;
   font-size: 12px;
   font-weight: 400;
+}
+.logoLojinhaFooterContainer {
+  cursor: pointer;
+}
+
+@media (min-width: 834px) {
 }
 
 @media (min-width: 1250px) {
@@ -74,5 +84,12 @@ footer {
   }
   .socicalMediaLogosFooter {
     order: 3;
+    width: 200px;
+  }
+  .footerContainer {
+    max-width: 1822px;
+  }
+  .logoLojinhaFooterContainer {
+    width: 200px;
   }
 }
