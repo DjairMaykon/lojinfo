@@ -1,10 +1,18 @@
 import './style.css'
 import LogoSvg from '../../assets/Logo.svg'
 import SearchIcon from '../../assets/SearchIcon.svg'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 
-export function Header(props) {
-  const { onSearch } = props
+export function Header() {
+  const [searchParams, setSearchParams] = useSearchParams()
+  function onSearch(search) {
+    setSearchParams(
+      {
+        search,
+      },
+      { replace: true }
+    )
+  }
   return (
     <>
       <input type="checkbox" id="checkboxMenuHamburger" />
@@ -21,6 +29,7 @@ export function Header(props) {
             <input
               type="text"
               onChange={e => onSearch(e.target.value)}
+              value={searchParams.get('search') ?? ''}
               placeholder="Pesquise por um produto"
             />
             <img src={SearchIcon} alt="Icone de Pesquisa" />
