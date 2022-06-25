@@ -1,6 +1,7 @@
 import compras from '../../assets/compras.svg'
 import chevronDown from '../../assets/chevronDown.svg'
 import './style.css'
+import { Link } from 'react-router-dom'
 
 export function HeroHome() {
   return (
@@ -17,10 +18,12 @@ export function HeroHome() {
               São João na Lojinha.
             </h2>
           </div>
-          <button>
-            Ver descontos
-            <img src={chevronDown} alt="" />
-          </button>
+          <Link to="/products/">
+            <button>
+              Ver descontos
+              <img src={chevronDown} alt="" />
+            </button>
+          </Link>
         </article>
       </div>
     </section>
