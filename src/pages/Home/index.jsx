@@ -8,18 +8,33 @@ import CamisaCategorias from '../../assets/camisaCategorias.svg'
 import TenisCategorias from '../../assets/tenisCategorias.svg'
 import './style.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export function Home() {
   const [search, setSearch] = useState('')
+  const navigate = useNavigate()
+
   return (
     <>
       <Header onSearch={text => setSearch(text)} />
       <main id="mainHome">
         <HeroHome />
         <section className="categotiasContainerHome">
-          <CategoriasHome text="Camisas" img={CamisaCategorias} />
-          <CategoriasHome text="Tênis" img={TenisCategorias} />
-          <CategoriasHome text="Bolsas" img={BolsaCategorias} />
+          <CategoriasHome
+            onClickSeeMore={() => navigate('/products?search=Camisas')}
+            text="Camisas"
+            img={CamisaCategorias}
+          />
+          <CategoriasHome
+            onClickSeeMore={() => navigate('/products?search=Tênis')}
+            text="Tênis"
+            img={TenisCategorias}
+          />
+          <CategoriasHome
+            onClickSeeMore={() => navigate('/products?search=Bolsas')}
+            text="Bolsas"
+            img={BolsaCategorias}
+          />
         </section>
         <SectionProducts search={search} />
       </main>

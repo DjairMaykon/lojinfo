@@ -13,7 +13,7 @@ export function CategoriasHome(props) {
 
       <div className="insideCardContainer">
         <h1 className="textCategories">{props.text}</h1>
-        <div className="butonSeeMore">
+        <div className="butonSeeMore" onClick={props.onClickSeeMore}>
           <h2 className="textSeeMoreCategories">Ver mais</h2>
           <img
             className="seeMoreCategories"

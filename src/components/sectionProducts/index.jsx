@@ -6,9 +6,11 @@ import { Modal } from '../modal'
 import { toast } from 'react-hot-toast'
 
 import './style.css'
+import { useSearchParams } from 'react-router-dom'
 
-export function SectionProducts(props) {
-  const { search } = props
+export function SectionProducts() {
+  const search = useSearchParams()[0].get('search')
+
   const [products, setProducts] = useState([])
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [productModal, setProductModal] = useState()
@@ -27,6 +29,7 @@ export function SectionProducts(props) {
   }, [])
 
   useEffect(() => {
+    console.log(search)
     getProducts()
   }, [search, page])
 
