@@ -10,11 +10,13 @@ import { RecentView } from '../../components/recentView'
 import { EmptySection } from '../../components/emptySection'
 import api from '../../utils/api'
 import { CardCartItem } from '../../components/cardCartItem'
+import { AddressCartSection } from '../../components/addressCartSection'
 
 export function Cart() {
   const [items, setItems] = useState([])
   const [deliveryTax, setDeliveryTax] = useState()
   const [subtotal, setSubtotal] = useState()
+  const [addressInfo, setAddressInfo] = useState()
 
   useEffect(() => {
     refreshCart()
@@ -70,7 +72,7 @@ export function Cart() {
             {items.length > 0 ? (
               <>
                 <section className="itemsCepContainer">
-                  <CepForm />
+                  <CepForm onGetCep={setAddressInfo} />
                   <section id="sectionCartItems">
                     {items.map((item, index) => (
                       <CardCartItem
@@ -83,6 +85,10 @@ export function Cart() {
                   </section>
                 </section>
                 <section className="cartSummaryButtonContainer">
+                  <AddressCartSection
+                    addressInfo={addressInfo}
+                    deliveryTax={deliveryTax}
+                  />
                   {subtotal && deliveryTax && (
                     <CartSummary
                       itemsQuantity={items.length}

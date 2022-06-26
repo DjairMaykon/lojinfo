@@ -1,0 +1,78 @@
+#sectionCartSummary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+#sectionCartSummary .title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 22px;
+  color: #275845;
+}
+
+#sectionCartSummary .values {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+#sectionCartSummary .values hr {
+  border: 1px solid #9d9a95;
+  width: 100%;
+}
+#sectionCartSummary .values .value,
+#sectionCartSummary .total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#sectionCartSummary .values h1,
+#sectionCartSummary .values h2,
+#sectionCartSummary .total h1,
+#sectionCartSummary .total h2 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  color: #252822;
+}
+#sectionCartSummary .total h2,
+#sectionCartSummary .values h2 {
+  font-weight: 500;
+}
+
+#sectionCartSummary .total h1,
+#sectionCartSummary .total h2 {
+  color: #53b38d;
+}
+
+@media screen and (min-width: 834px) {
+  #sectionCartSummary {
+    width: 100%;
+  }
+
+  #sectionCartSummary .values {
+    width: 100%;
+    border-top-width: 80%;
+    border-bottom-width: 80%;
+  }
+  #sectionCartSummary .values .value,
+  #sectionCartSummary .total {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  #sectionCartSummary {
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  #sectionCartSummary .values hr {
+    width: 100%;
+  }
+}
